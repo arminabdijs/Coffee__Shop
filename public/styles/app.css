@@ -289,12 +289,10 @@
       max-width: 96rem;
     }
     width: 100%;
+    max-width: 1280px;
     margin-inline: auto;
-    padding-inline: 1rem;
-    @media (width >= 64rem) {
-      max-width: 1280px;
-      padding-inline: 0;
-    }
+    padding-inline: clamp(1rem, 3vw, 2rem);
+    box-sizing: border-box;
   }
   .mx-auto {
     margin-inline: auto;
@@ -338,8 +336,8 @@
   .mb-8 {
     margin-bottom: calc(var(--spacing) * 8);
   }
-  .mb-20 {
-    margin-bottom: calc(var(--spacing) * 20);
+  .mb-12 {
+    margin-bottom: calc(var(--spacing) * 12);
   }
   .scrollbar-thin {
     &::-webkit-scrollbar-track {
@@ -991,6 +989,10 @@
     .xs\:h-auto {
       height: auto;
     }
+    .xs\:text-base {
+      font-size: var(--text-base);
+      line-height: var(--tw-leading, var(--text-base--line-height));
+    }
   }
   @media (width >= 40rem) {
     .sm\:grid-cols-3 {
@@ -1012,6 +1014,9 @@
     }
     .md\:mb-12 {
       margin-bottom: calc(var(--spacing) * 12);
+    }
+    .md\:mb-20 {
+      margin-bottom: calc(var(--spacing) * 20);
     }
     .md\:flex {
       display: flex;
@@ -1520,6 +1525,7 @@
   }
   .offer {
     position: relative;
+    height: fit-content;
     color: var(--color-gray-400);
   }
   .offer:after {
