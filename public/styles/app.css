@@ -8,7 +8,9 @@
       "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-400: oklch(70.4% 0.191 22.216);
     --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-red-600: oklch(57.7% 0.245 27.325);
     --color-orange-200: oklch(90.1% 0.076 70.697);
     --color-orange-300: oklch(83.7% 0.128 66.29);
     --color-orange-400: oklch(75% 0.183 55.934);
@@ -834,6 +836,12 @@
   .text-orange-300 {
     color: var(--color-orange-300);
   }
+  .text-red-400 {
+    color: var(--color-red-400);
+  }
+  .text-red-600 {
+    color: var(--color-red-600);
+  }
   .text-teal-600 {
     color: var(--color-teal-600);
   }
@@ -1108,6 +1116,10 @@
       font-size: var(--text-base);
       line-height: calc(var(--spacing) * 8.5);
     }
+    .md\:text-lg {
+      font-size: var(--text-lg);
+      line-height: var(--tw-leading, var(--text-lg--line-height));
+    }
     .md\:text-sm {
       font-size: var(--text-sm);
       line-height: var(--tw-leading, var(--text-sm--line-height));
@@ -1206,9 +1218,6 @@
   }
   .dark\:text-emerald-500:where(.dark, .dark *) {
     color: var(--color-emerald-500);
-  }
-  .dark\:text-gray-400:where(.dark, .dark *) {
-    color: var(--color-gray-400);
   }
   .dark\:text-white:where(.dark, .dark *) {
     color: var(--color-white);
