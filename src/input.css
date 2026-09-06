@@ -40,30 +40,27 @@
   /*  ========= animation =========  */
   --animate-ripple: ripple 6s ease-in-out infinite;
 
-
-
   @keyframes ripple {
     0% {
       transform: scale(1);
-      opacity: .9;
+      opacity: 0.9;
     }
 
     35% {
       transform: scale(1.04);
-      opacity: .75;
+      opacity: 0.75;
     }
 
     70% {
-      transform: scale(.98);
+      transform: scale(0.98);
       opacity: 1;
     }
 
     100% {
       transform: scale(1);
-      opacity: .9;
+      opacity: 0.9;
     }
   }
-
 }
 
 @utility container {
@@ -82,41 +79,35 @@
 } */
 
 @utility bg-home-mobile {
-  background-image: url("../assets/images/headerBgMobile.webp");
+  background-image: url('../assets/images/headerBgMobile.webp');
   background-repeat: no-repeat;
 }
 
 @utility bg-home-tablet {
-  background-image: url("../assets/images/hero-tablet.webp");
+  background-image: url('../assets/images/hero-tablet.webp');
   background-repeat: no-repeat;
 }
 
 @utility bg-home-desktop {
-  background-image: url("../assets/images/headerBgDesktop.webp");
+  background-image: url('../assets/images/headerBgDesktop.webp');
   background-repeat: no-repeat;
 }
 
 @utility products {
-  background:
-    linear-gradient(rgba(243, 244, 246, 0.65),
-      rgba(243, 244, 246, 0.65)),
-    url("../assets/images/Products-bg.png");
+  background: linear-gradient(rgba(243, 244, 246, 0.65), rgba(243, 244, 246, 0.65)), url('../assets/images/Products-bg.png');
   background-repeat: no-repeat;
 
-
   @variant dark {
-    background: url("../assets/images/Products-bg.png");
+    background: url('../assets/images/Products-bg.png');
     background-repeat: no-repeat;
   }
 }
 
 @utility flex-center {
-  @apply flex justify-center items-center
+  @apply flex justify-center items-center;
 }
 
-
 @layer base {
-
   /* =========================
      Dana
   ========================== */
@@ -143,7 +134,6 @@
     font-style: normal;
     font-display: swap;
   }
-
 
   /* =========================
      morabba
@@ -172,9 +162,17 @@
     font-display: swap;
   }
 
-
   body {
     @apply font-dana font-normal bg-gray-100 dark:bg-zinc-800;
+  }
+
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+  svg {
+    user-select: none;
+    -webkit-user-drag: none;
   }
 }
 
@@ -189,7 +187,7 @@
   }
 
   .submenu a::after {
-    content: "";
+    content: '';
     @apply absolute top-1/2 right-0 size-1.5 rounded-full bg-orange-300 opacity-0 -translate-y-1/2 translate-x-1 scale-50 transition-all duration-300;
   }
 
@@ -202,25 +200,23 @@
   }
 
   .overlay {
-    @apply invisible opacity-0 fixed inset-0 z-10 w-full h-full bg-black/40 transition-all md:hidden
+    @apply invisible opacity-0 fixed inset-0 z-10 w-full h-full bg-black/40 transition-all md:hidden;
   }
 
   .overlay--visible {
-    @apply visible opacity-100
+    @apply visible opacity-100;
   }
 
-
   .circle {
-    @apply flex justify-center items-center border rounded-full
+    @apply flex justify-center items-center border rounded-full;
   }
 
   .circle--main {
-    @apply absolute right-0 left-0 bottom-0 translate-y-1/2 mx-auto
+    @apply absolute right-0 left-0 bottom-0 translate-y-1/2 mx-auto;
   }
 
   .circle--lg {
     @apply size-22 md:size-50.75 border-white/25 animate-ripple;
-
   }
 
   .circle--md {
@@ -232,15 +228,15 @@
   }
 
   .section-title {
-    @apply text-2xl font-morabba font-medium text-zinc-700 md:text-5xl dark:text-white
+    @apply text-2xl font-morabba font-medium text-zinc-700 md:text-5xl dark:text-white;
   }
 
   .section-subtitle {
-    @apply inline-block text-lg font-morabba font-light mt-0.5 text-zinc-700 md:text-3xl md:mt-1.5 dark:text-white
+    @apply inline-block text-lg font-morabba font-light mt-0.5 text-zinc-700 md:text-3xl md:mt-1.5 dark:text-white;
   }
 
   .section-link {
-    @apply inline-flex items-center h-10 pl-1 pr-3 rounded-md tracking-tightest mt-1.5 text-base text-orange-300 transition-colors md:text-xl md:gap-x-1 md:hover:bg-orange-300/20
+    @apply inline-flex items-center h-10 pl-1 pr-3 rounded-md tracking-tightest mt-1.5 text-base text-orange-300 transition-colors md:text-xl md:gap-x-1 md:hover:bg-orange-300/20;
   }
 
   .offer {
@@ -248,7 +244,23 @@
   }
 
   .offer:after {
-    content: "";
-    @apply absolute inset-0 -top-0.5 m-auto w-full h-px bg-red-500
+    content: '';
+    @apply absolute inset-0 -top-0.5 m-auto w-full h-px bg-red-500;
+  }
+
+  .category-banner__item1 {
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.6) 33.85%, rgba(0, 0, 0, 0.1) 100%), url('../assets/images/category-right.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .category-banner__item2 {
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.6) 33.85%, rgba(0, 0, 0, 0.1) 100%), url('../assets/images/category-left.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    @apply flex-center w-9 h-9 rounded-full shadow-md bg-white text-zinc-700 hover:bg-gray-300 transition-all dark:bg-zinc-700 dark:text-white dark:hover:bg-white dark:hover:text-zinc-700 md:w-10 md:h-10;
   }
 }
