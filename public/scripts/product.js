@@ -210,10 +210,10 @@ function createProductCard(product) {
 
       </div>
 
-      <h5 class="font-dana font-medium text-sm h-10 md:h-14 md:text-xl
+      <a href="#" class="font-dana font-medium text-sm h-10 md:h-14 md:text-xl
         text-zinc-700 line-clamp-2 dark:text-white">
         ${product.title}
-      </h5>
+      </a>
 
       <div class="flex gap-x-2 md:gap-x-2.5 mt-1.5 md:mt-2.5">
 
