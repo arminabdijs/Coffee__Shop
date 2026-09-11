@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -20,8 +20,8 @@
   --color-brown-950: #2e1f15;
 
   /* ========= Fonts ========= */
-  --font-dana: 'Dana', sans-serif;
-  --font-morabba: 'Morabba', sans-serif;
+  --font-dana: "Dana", sans-serif;
+  --font-morabba: "Morabba", sans-serif;
 
   /* ========= Shadow ========= */
 
@@ -79,26 +79,26 @@
 } */
 
 @utility bg-home-mobile {
-  background-image: url('../assets/images/headerBgMobile.webp');
+  background-image: url("../assets/images/headerBgMobile.webp");
   background-repeat: no-repeat;
 }
 
 @utility bg-home-tablet {
-  background-image: url('../assets/images/hero-tablet.webp');
+  background-image: url("../assets/images/hero-tablet.webp");
   background-repeat: no-repeat;
 }
 
 @utility bg-home-desktop {
-  background-image: url('../assets/images/headerBgDesktop.webp');
+  background-image: url("../assets/images/headerBgDesktop.webp");
   background-repeat: no-repeat;
 }
 
 @utility products {
-  background: linear-gradient(rgba(243, 244, 246, 0.65), rgba(243, 244, 246, 0.65)), url('../assets/images/Products-bg.png');
+  background: linear-gradient(rgba(243, 244, 246, 0.65), rgba(243, 244, 246, 0.65)), url("../assets/images/Products-bg.png");
   background-repeat: no-repeat;
 
   @variant dark {
-    background: url('../assets/images/Products-bg.png');
+    background: url("../assets/images/Products-bg.png");
     background-repeat: no-repeat;
   }
 }
@@ -107,29 +107,34 @@
   @apply flex justify-center items-center;
 }
 
+@utility ltr-text {
+  direction: ltr;
+  text-align: left;
+}
+
 @layer base {
   /* =========================
      Dana
   ========================== */
   @font-face {
-    font-family: 'Dana';
-    src: url('../assets/fonts/Dana/DanaFaNum-Regular.woff2') format('woff2');
+    font-family: "Dana";
+    src: url("../assets/fonts/Dana/DanaFaNum-Regular.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
   }
 
   @font-face {
-    font-family: 'Dana';
-    src: url('../assets/fonts/Dana/DanaFaNum-Medium.woff2') format('woff2');
+    font-family: "Dana";
+    src: url("../assets/fonts/Dana/DanaFaNum-Medium.woff2") format("woff2");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
   }
 
   @font-face {
-    font-family: 'Dana';
-    src: url('../assets/fonts/Dana/DanaFaNum-DemiBold.woff2') format('woff2');
+    font-family: "Dana";
+    src: url("../assets/fonts/Dana/DanaFaNum-DemiBold.woff2") format("woff2");
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -139,24 +144,24 @@
      morabba
   ========================== */
   @font-face {
-    font-family: 'Morabba';
-    src: url('../assets/fonts/Morabba/Morabba-Light.woff2') format('woff2');
+    font-family: "Morabba";
+    src: url("../assets/fonts/Morabba/Morabba-Light.woff2") format("woff2");
     font-weight: 300;
     font-style: normal;
     font-display: swap;
   }
 
   @font-face {
-    font-family: 'Morabba';
-    src: url('../assets/fonts/Morabba/Morabba-Medium.woff2') format('woff2');
+    font-family: "Morabba";
+    src: url("../assets/fonts/Morabba/Morabba-Medium.woff2") format("woff2");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
   }
 
   @font-face {
-    font-family: 'Morabba';
-    src: url('../assets/fonts/Morabba/Morabba-Bold.woff2') format('woff2');
+    font-family: "Morabba";
+    src: url("../assets/fonts/Morabba/Morabba-Bold.woff2") format("woff2");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -187,7 +192,7 @@
   }
 
   .submenu a::after {
-    content: '';
+    content: "";
     @apply absolute top-1/2 right-0 size-1.5 rounded-full bg-orange-300 opacity-0 -translate-y-1/2 translate-x-1 scale-50 transition-all duration-300;
   }
 
@@ -244,17 +249,17 @@
   }
 
   .offer:after {
-    content: '';
+    content: "";
     @apply absolute inset-0 -top-0.5 m-auto w-full h-px bg-red-500;
   }
 
   .category-banner__item1 {
-    background: linear-gradient(270deg, rgba(0, 0, 0, 0.6) 33.85%, rgba(0, 0, 0, 0.1) 100%), url('../assets/images/category-right.jpg');
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.6) 33.85%, rgba(0, 0, 0, 0.1) 100%), url("../assets/images/category-right.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }
   .category-banner__item2 {
-    background: linear-gradient(270deg, rgba(0, 0, 0, 0.6) 33.85%, rgba(0, 0, 0, 0.1) 100%), url('../assets/images/category-left.jpg');
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.6) 33.85%, rgba(0, 0, 0, 0.1) 100%), url("../assets/images/category-left.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -262,5 +267,37 @@
   .swiper-button-prev-custom,
   .swiper-button-next-custom {
     @apply flex-center w-9 h-9 rounded-full shadow-md bg-white text-zinc-700 hover:bg-gray-300 transition-all dark:bg-zinc-700 dark:text-white dark:hover:bg-white dark:hover:text-zinc-700 md:w-10 md:h-10;
+  }
+
+  .services {
+    @apply relative;
+  }
+  .services::before,
+  .services::after {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    background-color: #d1d5db;
+  }
+  html.dark .services::before,
+  html.dark .services::after {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .services::before {
+    @apply w-px;
+    height: calc(100% + 20px);
+  }
+  .services::after {
+    @apply h-px;
+    width: calc(100% - 2rem);
+  }
+
+  @media screen and (min-width: 640px) {
+    .services::before,
+    .services::after {
+      content: none;
+    }
   }
 }
