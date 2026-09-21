@@ -1,12 +1,12 @@
 let allProduct = [
   {
     id: 1,
-    title: 'قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی',
-    image: './assets/images/p4.png',
+    title: "قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی",
+    image: "./assets/images/p4.png",
     price: {
       current: 175000,
       old: null,
-      currency: 'تومان',
+      currency: "تومان",
     },
     discount: null,
     rating: 4.8,
@@ -16,12 +16,12 @@ let allProduct = [
 
   {
     id: 2,
-    title: 'قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی',
-    image: './assets/images/p3.png',
+    title: "قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی",
+    image: "./assets/images/p3.png",
     price: {
       current: null,
       old: null,
-      currency: 'تومان',
+      currency: "تومان",
     },
     discount: null,
     rating: 3.7,
@@ -31,12 +31,12 @@ let allProduct = [
 
   {
     id: 3,
-    title: 'قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی',
-    image: './assets/images/p1.png',
+    title: "قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی",
+    image: "./assets/images/p1.png",
     price: {
       current: 154000,
       old: 175000,
-      currency: 'تومان',
+      currency: "تومان",
     },
     discount: 12,
     rating: 5,
@@ -45,12 +45,12 @@ let allProduct = [
   },
   {
     id: 4,
-    title: 'قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی',
-    image: './assets/images/p2.png',
+    title: "قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی",
+    image: "./assets/images/p2.png",
     price: {
       current: 175000,
       old: null,
-      currency: 'تومان',
+      currency: "تومان",
     },
     discount: null,
     rating: 4.4,
@@ -59,12 +59,12 @@ let allProduct = [
   },
   {
     id: 5,
-    title: 'قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی',
-    image: './assets/images/p1.png',
+    title: "قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی",
+    image: "./assets/images/p1.png",
     price: {
       current: 154000,
       old: 175000,
-      currency: 'تومان',
+      currency: "تومان",
     },
     discount: 12,
     rating: 4.6,
@@ -73,12 +73,12 @@ let allProduct = [
   },
   {
     id: 6,
-    title: 'قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی',
-    image: './assets/images/p2.png',
+    title: "قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی",
+    image: "./assets/images/p2.png",
     price: {
       current: null,
       old: null,
-      currency: 'تومان',
+      currency: "تومان",
     },
     discount: null,
     rating: 2.5,
@@ -87,12 +87,12 @@ let allProduct = [
   },
   {
     id: 7,
-    title: 'قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی',
-    image: './assets/images/p4.png',
+    title: "قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی",
+    image: "./assets/images/p4.png",
     price: {
       current: 175000,
       old: null,
-      currency: 'تومان',
+      currency: "تومان",
     },
     discount: null,
     rating: 5,
@@ -102,12 +102,12 @@ let allProduct = [
 
   {
     id: 8,
-    title: 'قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی',
-    image: './assets/images/p3.png',
+    title: "قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی",
+    image: "./assets/images/p3.png",
     price: {
       current: 175000,
       old: null,
-      currency: 'تومان',
+      currency: "تومان",
     },
     discount: null,
     rating: 4.2,
@@ -116,12 +116,12 @@ let allProduct = [
   },
   {
     id: 9,
-    title: 'قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی',
-    image: './assets/images/p5.png',
+    title: "قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی",
+    image: "./assets/images/p5.png",
     price: {
       current: 154000,
       old: 175000,
-      currency: 'تومان',
+      currency: "تومان",
     },
     discount: 12,
     rating: 5,
@@ -130,12 +130,12 @@ let allProduct = [
   },
   {
     id: 10,
-    title: 'قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی',
-    image: './assets/images/p6.png',
+    title: "قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی",
+    image: "./assets/images/p6.png",
     price: {
       current: null,
       old: null,
-      currency: 'تومان',
+      currency: "تومان",
     },
     discount: null,
     rating: 4,
@@ -144,12 +144,12 @@ let allProduct = [
   },
   {
     id: 11,
-    title: 'قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی',
-    image: './assets/images/p7.png',
+    title: "قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی",
+    image: "./assets/images/p7.png",
     price: {
       current: 175000,
       old: null,
-      currency: 'تومان',
+      currency: "تومان",
     },
     discount: null,
     rating: 4,
@@ -158,12 +158,12 @@ let allProduct = [
   },
   {
     id: 12,
-    title: 'قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی',
-    image: './assets/images/p8.png',
+    title: "قهوه ترک بن مانو مقدار 250 گرم خط دوم اسم طولانی",
+    image: "./assets/images/p8.png",
     price: {
       current: 175000,
       old: null,
-      currency: 'تومان',
+      currency: "تومان",
     },
     discount: null,
     rating: 4,
@@ -172,19 +172,19 @@ let allProduct = [
   },
 ];
 
-const productList = document.getElementById('product-list');
-const puplerProductList = document.getElementById('pupler-product-list');
+const productList = document.getElementById("product-list");
+const puplerProductList = document.getElementById("pupler-product-list");
 
 const normalProducts = allProduct.slice(0, 8);
 const featuredProducts = allProduct.filter((product) => product.featured);
 
 function createProductCard(product) {
-  const card = document.createElement('div');
+  const card = document.createElement("div");
 
-  card.className = 'bg-white dark:bg-zinc-700 p-2 md:p-5 rounded-2xl shadow-md';
+  card.className = "bg-white dark:bg-zinc-700 p-2 md:p-5 rounded-2xl shadow-md";
 
   card.insertAdjacentHTML(
-    'beforeend',
+    "beforeend",
     `
       <div class="relative flex items-center justify-center mb-2 md:mb-5 h-32 md:h-52">
 
@@ -205,7 +205,7 @@ function createProductCard(product) {
                 ${product.discount}%
               </span>
             `
-            : ''
+            : ""
         }
 
       </div>
@@ -252,7 +252,7 @@ function createProductCard(product) {
                 </span>
               </div>
             `
-            : ''
+            : ""
         }
 
       </div>
@@ -299,7 +299,7 @@ function createProductCard(product) {
                     </svg>
                   `,
                 )
-                .join('')}
+                .join("")}
             </div>
 
             <div
@@ -316,7 +316,7 @@ function createProductCard(product) {
                       </svg>
                     `,
                   )
-                  .join('')}
+                  .join("")}
               </div>
             </div>
 
@@ -336,15 +336,15 @@ normalProducts.forEach((product) => {
 });
 
 featuredProducts.forEach((product) => {
-  const slide = document.createElement('div');
+  const slide = document.createElement("div");
 
-  slide.className = 'swiper-slide';
+  slide.className = "swiper-slide";
   slide.appendChild(createProductCard(product));
 
   puplerProductList.appendChild(slide);
 });
 
-var swiper = new Swiper('.swiper', {
+var swiper = new Swiper(".swiper", {
   slidesPerView: 2,
   spaceBetween: 14,
 
@@ -360,8 +360,8 @@ var swiper = new Swiper('.swiper', {
   speed: 800,
 
   navigation: {
-    nextEl: '.swiper-button-next-custom',
-    prevEl: '.swiper-button-prev-custom',
+    nextEl: ".swiper-button-next-custom",
+    prevEl: ".swiper-button-prev-custom",
   },
 
   breakpoints: {
