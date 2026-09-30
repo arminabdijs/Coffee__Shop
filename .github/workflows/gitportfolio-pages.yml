@@ -1,8 +1,9 @@
-name: GitPortfolio Pages
+name: GitPortfolio Sync Pro - Pages
 
 on:
   push:
     branches: ['main']
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -10,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: gitportfolio-pages
   cancel-in-progress: true
 
 jobs:
@@ -20,54 +21,68 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Setup Pages
-        id: pages
         uses: actions/configure-pages@v5
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
       - name: Install dependencies
-        shell: bash
         working-directory: .
+        shell: bash
         run: |
           set -euo pipefail
-          corepack enable
           if [ 'npm' = 'pnpm' ]; then pnpm install --frozen-lockfile || pnpm install;
-          elif [ 'npm' = 'yarn' ]; then yarn install --immutable || yarn install --frozen-lockfile;
+          elif [ 'npm' = 'yarn' ]; then corepack enable && yarn install --immutable || yarn install --frozen-lockfile;
           elif [ 'npm' = 'bun' ]; then bun install --frozen-lockfile || bun install;
-          elif [ -f package-lock.json ]; then npm ci; else npm install; fi
-      - name: Build site
-        shell: bash
+          elif [ -f package-lock.json ]; then npm ci;
+          else npm install; fi
+      - name: Build static site
         working-directory: .
+        shell: bash
         run: |
           set -euo pipefail
-          if [ -f package.json ] && node -e "const p=require('./package.json'); process.exit(p.scripts && p.scripts.build ? 0 : 1)"; then npm run build; fi
+          npm run build
       - name: Resolve publish directory
         id: output
         shell: bash
         env:
-          OUTPUT_DIR: 'public'
-          BUILD_DIR: '.'
+          OUTPUT_DIR: 'dist'
+          APP: '.'
         run: |
           set -euo pipefail
-          if [ "$OUTPUT_DIR" != '__AUTO__' ] && [ -f "$OUTPUT_DIR/index.html" ]; then echo "dir=$OUTPUT_DIR" >> "$GITHUB_OUTPUT"; exit 0; fi
-          for d in dist build out public site _site .output/public docs public_html; do
-            if [ -f "$BUILD_DIR/$d/index.html" ]; then echo "dir=$BUILD_DIR/$d" >> "$GITHUB_OUTPUT"; exit 0; fi
+          candidates=(
+            "$OUTPUT_DIR"
+            "$APP/dist" "$APP/build" "$APP/out" "$APP/public" "$APP/site" "$APP/_site"
+            "$APP/.output/public" "$APP/docs/.vitepress/dist" "$APP/.vitepress/dist" "$APP/src/.vuepress/dist"
+            "$APP/public_html" "$APP/book"
+          )
+          for d in "${candidates[@]}"; do
+            if [ -n "$d" ] && [ "$d" != "__AUTO__" ] && [ -f "$d/index.html" ]; then echo "dir=$d" >> "$GITHUB_OUTPUT"; exit 0; fi
           done
-          if [ -f "$BUILD_DIR/index.html" ]; then echo "dir=$BUILD_DIR" >> "$GITHUB_OUTPUT"; exit 0; fi
-          candidate=$(find "$BUILD_DIR" -type f -name index.html -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/.next/*' -not -path '*/.nuxt/*' -not -path '*/.svelte-kit/*' -not -path '*/vendor/*' -not -path '*/tests/*' -not -path '*/test/*' | head -n 1 || true)
+          if [ -f "$APP/index.html" ]; then echo "dir=$APP" >> "$GITHUB_OUTPUT"; exit 0; fi
+          candidate=$(find "$APP" -type f -name index.html \
+            -not -path '*/node_modules/*' \
+            -not -path '*/.git/*' \
+            -not -path '*/.next/*' \
+            -not -path '*/.nuxt/*' \
+            -not -path '*/.svelte-kit/*' \
+            -not -path '*/vendor/*' \
+            -not -path '*/tests/*' \
+            -not -path '*/test/*' \
+            -not -path '*/examples/*' | head -n 1 || true)
           if [ -n "$candidate" ]; then echo "dir=$(dirname "$candidate")" >> "$GITHUB_OUTPUT"; exit 0; fi
-          echo 'No deployable index.html was produced. Configure an output directory or a static export for this framework.' >&2; exit 1
+          echo 'GitPortfolio Sync: no static index.html was produced. This project may require an external SSR/backend deployment or a custom output directory.' >&2
+          exit 1
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: ${{ steps.output.outputs.dir }}
   deploy:
+    runs-on: ubuntu-latest
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
